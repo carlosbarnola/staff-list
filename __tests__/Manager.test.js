@@ -18,5 +18,5 @@ test('gets manager office number as a 10 digits numbers', () => {
 test('gets manager role as an string', () => {
     const manager = new Manager('Jim', 32, 'jim@gmail.com', 2022965700);
 
-    expect(manager.getRole()).toEqual(expect.any(String));
+    expect(manager.getRole()).toEqual('Manager');
 })
