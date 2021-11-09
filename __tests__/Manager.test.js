@@ -1,10 +1,22 @@
-const Manager = require('../lib/Engineer')
+const Manager = require('../lib/Manager')
 
-test('creates an Engineer object', () => {
-    const engineer = new Engineer('Jim', 32, 'jim@gmail.com', 'github');
+test('creates an manager object', () => {
+    const manager = new Manager('Jim', 32, 'jim@gmail.com', 2022965700);
 
-    expect(engineer.name).toBe('Jim');
-    expect(engineer.id).toEqual(expect.any(Number));
-    expect(engineer.email).toEqual(expect.any(String));
-    expect(engineer.gitHub).toEqual(expect.any(String));    
+    expect(manager.name).toBe('Jim');
+    expect(manager.id).toEqual(expect.any(Number));
+    expect(manager.email).toEqual(expect.any(String));
+    expect(manager.officeNumber).toEqual(expect.any(Number));    
 });
+
+test('gets manager office number as a 10 digits numbers', () => {
+    const manager = new Manager('Jim', 32, 'jim@gmail.com', 2022965700);
+
+    expect(manager.getOfficeNumber()).toBeTruthy();
+})
+
+test('gets manager role as an string', () => {
+    const manager = new Manager('Jim', 32, 'jim@gmail.com', 2022965700);
+
+    expect(manager.getRole()).toEqual(expect.any(String));
+})
